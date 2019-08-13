@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import "./login.css";
-import Dialog from 'react-bootstrap-dialog';
-import history from "../history";
+
 export default class Login extends Component {
   constructor(props) {
     super(props);
@@ -25,20 +24,6 @@ export default class Login extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-  }
-
-  showLoginAndRedirectDash = () => {
-    const sessionDetailsToMatch = JSON.parse(sessionStorage.getItem("Signeduser"));
-    if(sessionDetailsToMatch.email === this.state.email && sessionDetailsToMatch.password === this.state.password) {
-      this.dialog.showAlert('Hi \t'+ (sessionDetailsToMatch.name).toUpperCase() + '\tyou have successfully loggedIn!');
-      history.push("/dashboard");
-      setTimeout(function() {
-        window.location.reload()
-      },3000); 
-    }
-    else {
-      this.dialog.showAlert('Hi \t please try with correct user name and password');
-    }
   }
 
   render() {
@@ -68,12 +53,10 @@ export default class Login extends Component {
             variant="info"
             disabled={!this.validateForm()}
             type="submit"
-            onClick = {this.showLoginAndRedirectDash}
           >
             Login
           </Button>
         </form>
-        <Dialog ref={(el) => { this.dialog = el }} />
       </div>
     );
   }

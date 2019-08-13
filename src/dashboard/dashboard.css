@@ -1,0 +1,8 @@
+.dashboardCSS {
+    width:100%; height: 500px;
+    background: #bada55;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

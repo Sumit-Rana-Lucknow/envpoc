@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import history from "../history";
 import {
   FormGroup,
   FormControl,
@@ -43,15 +42,11 @@ export default class Signup extends Component {
                     password: this.state.password};
     sessionStorage.setItem("Signeduser", JSON.stringify(details));
     this.dialog.showAlert('Hi \t'+ this.state.name.toUpperCase() + '\tyou have successfully been registered!');
-    history.push('/login');
-    setTimeout(function(){
-      window.location.reload()
-    },3000); 
     
     
   }
   
-  
+
   renderForm() {
     return (
       <form onSubmit={this.handleSubmit}>
