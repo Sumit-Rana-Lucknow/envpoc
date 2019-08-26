@@ -1,11 +1,26 @@
 @media all and (min-width: 480px) {
     .Login {
       padding: 60px 0;
+      text-align: left;
     }
   
     .Login form {
       margin: 0 auto;
-      max-width: 320px;
+      max-width: 400px;
+      padding: 40px;
+    }
+
+    .showAsShadowCard {
+      box-shadow: 3px 3px 3px 3px rgb(114, 114, 114);
+    }
+    .buttonSignUp {
+      width:320px;
+      height: 60px;
+      font-size: 20px !important;
+    }
+    
+    .legendProperty {
+      color: tomato;
     }
   }
   

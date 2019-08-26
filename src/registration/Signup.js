@@ -3,13 +3,12 @@ import history from "../history";
 import {
   FormGroup,
   FormControl,
-  ControlLabel, 
-  Button
+  ControlLabel
 } from "react-bootstrap";
 
 import Dialog from 'react-bootstrap-dialog'
 import "./Signup.css";
-
+import Button from '@material-ui/core/Button';
 export default class Signup extends Component {
   constructor(props) {
     super(props);
@@ -54,42 +53,45 @@ export default class Signup extends Component {
   
   renderForm() {
     return (
-      <form onSubmit={this.handleSubmit}>
-      <FormGroup controlId="name" bsSize="large">
-          <ControlLabel>NAME</ControlLabel>
-          <FormControl
-            autoFocus
-            type="text"
-            value={this.state.name}
-            onChange={this.handleChange}
-          />
-        </FormGroup>
-        <FormGroup controlId="email" bsSize="large">
-          <ControlLabel>Email</ControlLabel>
-          <FormControl
-            autoFocus
-            type="email"
-            value={this.state.email}
-            onChange={this.handleChange}
-          />
-        </FormGroup>
-        <FormGroup controlId="password" bsSize="large">
-          <ControlLabel>Password</ControlLabel>
-          <FormControl
-            value={this.state.password}
-            onChange={this.handleChange}
-            type="password"
-          />
-        </FormGroup>
-        <FormGroup controlId="confirmPassword" bsSize="large">
-          <ControlLabel>Confirm Password</ControlLabel>
-          <FormControl
-            value={this.state.confirmPassword}
-            onChange={this.handleChange}
-            type="password"
-          />
-        </FormGroup>
-        <Button variant="success"
+      <form className = "showAsShadowCard" onSubmit={this.handleSubmit}>
+        <fieldset>
+          <legend className="legendProperty">Sign-up</legend>
+          <FormGroup  controlId="name" bsSize="large">
+            <ControlLabel>Name</ControlLabel>
+            <FormControl
+              autoFocus
+              type="text"
+              value={this.state.name}
+              onChange={this.handleChange}
+            />
+          </FormGroup>
+          <FormGroup controlId="email" bsSize="large">
+            <ControlLabel>Email</ControlLabel>
+            <FormControl
+              type="email"
+              value={this.state.email}
+              onChange={this.handleChange}
+            />
+          </FormGroup>
+          <FormGroup controlId="password" bsSize="large">
+            <ControlLabel>Password</ControlLabel>
+            <FormControl
+              value={this.state.password}
+              onChange={this.handleChange}
+              type="password"
+            />
+          </FormGroup>
+          <FormGroup controlId="confirmPassword" bsSize="large">
+            <ControlLabel>Confirm Password</ControlLabel>
+            <FormControl
+              value={this.state.confirmPassword}
+              onChange={this.handleChange}
+              type="password"
+            />
+          </FormGroup>
+        </fieldset>
+        <Button variant="contained" color="primary"
+            className="buttonSignUp"
             block
             bsSize="large"
             disabled={!this.validateForm()}

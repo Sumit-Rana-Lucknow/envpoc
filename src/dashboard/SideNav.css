@@ -1,0 +1,44 @@
+.MuiDrawer-paperAnchorLeft {
+    margin-top: 30px;
+    left: 30px !important;
+    right : 30px !important;
+    
+    
+}
+.MuiToolbar-regular {
+    background-color: slategrey !important  ;
+}
+
+.makeStyles-drawerPaper-4 {
+    width: 170px !important;
+}
+
+.MuiDrawer-paper {
+    height: 700px !important;
+}
+
+.MuiListItemText-root {
+
+    flex: 34 35 auto !important;
+    min-width: 0;
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+    
+    font-size: 20px;
+}
+
+.showListBetterView {
+    color:green !important;
+    font-weight: bold;
+}
+
+.MuiListItem-button:hover {
+
+    background-color: lightskyblue !important;
+    
+}
+
+.MuiPaper-root {
+    
+    background-image: url('/src/dashboard/bg-img.jpg') !important;
+}

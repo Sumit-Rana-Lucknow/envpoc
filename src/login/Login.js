@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+import { FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+import Button from '@material-ui/core/Button';
 import "./login.css";
 import Dialog from 'react-bootstrap-dialog';
 import history from "../history";
@@ -29,12 +30,16 @@ export default class Login extends Component {
 
   showLoginAndRedirectDash = () => {
     const sessionDetailsToMatch = JSON.parse(sessionStorage.getItem("Signeduser"));
-    if(sessionDetailsToMatch.email === this.state.email && sessionDetailsToMatch.password === this.state.password) {
+    if(sessionDetailsToMatch || sessionDetailsToMatch === null || sessionDetailsToMatch === "") {
+      this.dialog.showAlert('Hi \t Please Sign up first to login to system');
+    }
+    if(sessionDetailsToMatch && sessionDetailsToMatch.email === this.state.email && sessionDetailsToMatch.password === this.state.password) {
       this.dialog.showAlert('Hi \t'+ (sessionDetailsToMatch.name).toUpperCase() + '\tyou have successfully loggedIn!');
       history.push("/dashboard");
       setTimeout(function() {
         window.location.reload()
       },3000); 
+      sessionStorage.setItem('accessTookCorrectPath', true);
     }
     else {
       this.dialog.showAlert('Hi \t please try with correct user name and password');
@@ -44,8 +49,10 @@ export default class Login extends Component {
   render() {
     return (
       <div className="Login">
-        <form onSubmit={this.handleSubmit}>
-          <FormGroup controlId="email" bsSize="large">
+        <form className = "showAsShadowCard" onSubmit={this.handleSubmit}>
+          <fieldset>
+              <legend className="legendProperty">Sign-in</legend>
+              <FormGroup controlId="email" bsSize="large">
             <ControlLabel>Email</ControlLabel>
             <FormControl
               autoFocus
@@ -63,15 +70,16 @@ export default class Login extends Component {
             />
           </FormGroup>
           <Button
-            block
+            className="buttonSignUp"
+            variant="contained" color="primary"
             bsSize="large"
-            variant="info"
             disabled={!this.validateForm()}
             type="submit"
             onClick = {this.showLoginAndRedirectDash}
           >
             Login
           </Button>
+            </fieldset>
         </form>
         <Dialog ref={(el) => { this.dialog = el }} />
       </div>
