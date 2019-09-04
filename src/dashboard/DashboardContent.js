@@ -7,6 +7,7 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import './DashboardContent.css';
 import Step1 from './StepsRequired/Step1';
+import Step2 from './StepsRequired/Step2';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -31,11 +32,9 @@ function getSteps() {
 function getStepContent(step) {
   switch (step) {
     case 0:
-      return(<div className="showDataStep1"><Step1 />
-                   </div>) ;
+      return(<div className="showDataStep1"><Step1 /></div>) ;
     case 1:
-      return(<div className="showDataStep1"><p>Step 3: What is an ad group anyways?</p>
-      <p>Step 4: Select the stage area for this</p> </div>);
+      return(<div className="showDataStep1"><Step2 /></div>);
        
     case 2:
       return(<div className="showDataStep1"><p>Step 5: This is the bit I really care about!?</p>
