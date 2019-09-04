@@ -1,44 +1,128 @@
 .MuiDrawer-paperAnchorLeft {
-    margin-top: 30px;
+    margin-top: 10px;
     left: 30px !important;
     right : 30px !important;
-    
-    
 }
 .MuiToolbar-regular {
-    background-color: slategrey !important  ;
+    background-color: #006CB7 !important  ;
+    min-height: 45px !important;
 }
-
-.makeStyles-drawerPaper-4 {
-    width: 170px !important;
+.MuiTypography-h4 {
+    font-size: 1.6rem !important;
+}
+.makeStyles-drawerPaper-136 {
+    width: 200px !important;
 }
 
 .MuiDrawer-paper {
-    height: 700px !important;
+    height: 600px !important;
 }
 
 .MuiListItemText-root {
-
     flex: 34 35 auto !important;
     min-width: 0;
     margin-top: 5px !important;
     margin-bottom: 5px !important;
-    
     font-size: 20px;
 }
 
-.showListBetterView {
-    color:green !important;
-    font-weight: bold;
-}
-
 .MuiListItem-button:hover {
-
-    background-color: lightskyblue !important;
-    
+    background-color: #cae4f5 !important;
+    /* border: solid 1px #a1bed2; */
+}
+.MuiListItem-button {
+    border-bottom: solid 1px #dcdcdc  !important;
+}
+.MuiTypography-noWrap {
+        overflow:inherit !important;
+}
+.MuiTypography-body1 {
+    font-size: 15px !important;
+    font-weight: 600 !important;
+}
+.button5{
+    border-radius: 80%;
+    background-color: green;
+    border: none;
+    color: white;
+    padding: 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px2px;
+    cursor: pointer;
 }
 
-.MuiPaper-root {
-    
-    background-image: url('/src/dashboard/bg-img.jpg') !important;
+.button6{
+    border-radius: 80%;
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px2px;
+    cursor: pointer;
+  }
+  .icon-circle {
+    background:#b3b0b0;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    border-radius: 50%;
+    text-align: center;
+  }
+  .iconSpace{
+    margin-top: 6px;
+  }
+  .navLogo {
+      margin-top: 7px;
+  }
+  .headingText {
+    text-transform: capitalize;
+  }
+
+  .sideBarParent  .MuiDrawer-paper{
+    z-index: 1;
+    top: 45px;
+    margin: 0;
+    left:0 !important;
+    width: 280px;
+    height: 580px !important;
+  }
+  .sideNavHeading{
+    font-size: 2rem;
+    flex: auto;
+    font-weight: bold;
+  }
+  .CustomChip {
+          font-size: 1.1rem;
+    border-radius: 12%;
+    padding: 0px 4px;
+    color: #fff;
 }
+.CustomChip.active {
+    border: solid 1px green;
+    background: green;
+    
+}
+.CustomChip.inactive {
+    border: solid 1px red;
+    background: red;
+}
+ 
+.icon-bar {
+    position: fixed;
+    top: 10%;
+    left: 1%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  
+  
+  
+  

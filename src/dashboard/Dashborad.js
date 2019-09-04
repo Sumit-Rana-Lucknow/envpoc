@@ -2,12 +2,16 @@ import React, { Component } from 'react';
 import SideNav from './SideNav'
 import './dashboard.css';
 import RedirectToLogin from './RedirectToLogin';
+
+import SideShowList from './SideShowList';
 class Dashboard extends Component {
     state = {
-            accessPath : false
+            accessPath : false,
+            showSelected: ""
     };
-    componentDidMount () {
+    componentDidMount (props) {
         this.setState({accessPath: JSON.parse(sessionStorage.getItem('accessTookCorrectPath'))});
+        
     }
     render() {
         
@@ -16,10 +20,11 @@ class Dashboard extends Component {
                 { this.state.accessPath ? 
                 <div>
                     <div className="dashboardCSS">
-                        <h2>This is our Dashboard page</h2>
+                        
                     </div>
                     <div>
                             <SideNav />
+                            <SideShowList />
                         </div>
                 </div> : <RedirectToLogin />}
             </div>

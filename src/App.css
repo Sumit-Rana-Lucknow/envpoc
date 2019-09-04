@@ -38,3 +38,20 @@
 .App .navbar-brand {
   font-weight: bold;
 }
+/* .MuiAppBar-positionFixed {
+  margin-top:54px !important; 
+}
+
+.pageHeader {
+  margin-top: -15px;
+  background: #ffffff;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+}
+
+.Applogo {
+  width: 160px;
+  margin-top: -20px;
+  padding: 10px 20px;
+} */

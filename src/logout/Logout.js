@@ -42,7 +42,7 @@ const Logout = () => {
     }
     return(
         <React.Fragment>
-            <Button variant="contained" color="secondary" className={classes.button} onClick = {() => handleOpen()} style = {{position: 'absolute', right: '0', margin : '-2px 20px'}}>
+            <Button variant="contained" color="secondary" className={classes.button} onClick = {() => handleOpen()} style = {{margin : '0px'}}>
                 Logout
             </Button>
             <div>

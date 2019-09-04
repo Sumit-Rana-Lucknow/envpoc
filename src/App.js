@@ -4,12 +4,28 @@ import Routes from "./Routes";
 import { Link } from "react-router-dom";
 import { Nav, Navbar, NavItem } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
+import logo from "./assets/HCL.png";
+
 
 class App extends Component {
+  state={
+    isDashboard:true
+  }
+  componentDidMount(){
+    
+    if(window.location.pathname.indexOf('dashboard') > -1){
+      this.setState({isDashboard:true});
+    }else {
+      this.setState({isDashboard:false});
+    }
+  }
   render() {
     return (
-      <div className="App container">
-        <Navbar fluid collapseOnSelect>
+      <div className="App">
+     
+        <div className="container">
+        {this.state.isDashboard ? null: <div>
+          <Navbar fluid collapseOnSelect>
           <Navbar.Header>
             <Navbar.Brand>
               <Link to="/">HomePage</Link>
@@ -27,7 +43,10 @@ class App extends Component {
             </Nav>
           </Navbar.Collapse>
         </Navbar>
-        <Routes />
+        
+          </div> }
+          <Routes />
+        </div>
       </div>
     );
   }

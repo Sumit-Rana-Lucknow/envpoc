@@ -9,7 +9,7 @@ const TstEnvList = [
     },
     {
         "env": "tst03",
-        "status": false
+        "status": true
     },
     {
         "env": "tst04",
@@ -25,7 +25,7 @@ const TstEnvList = [
     },
     {
         "env": "tst19",
-        "status": true
+        "status": false
     },
     {
         "env": "tst19",
